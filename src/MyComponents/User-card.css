@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.user-small-card {
+    border-radius: 5px;
+    padding-left: 15px;
+    position: relative;
+    overflow: hidden;
+    margin: .4rem;
+    box-shadow: 0px 0px 2px 2px rgba(0,0,0,0.19);
+    transition: all 0.3s ease-out;
+    /* flex property */
+    flex: 20%;
+}
+
+
+.text-container {
+    padding: 10px 15px;
+}
+.text-container a {
+    color: red;
+}
+.text-container > h3 {
+    font-family: 'BioRhyme', serif;;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    padding:  7px 0;
+}
+.text-container > p {
+    margin: 0;
+}
+
+.user-small-card::before {
+content: "";
+position: absolute;
+z-index: -1;
+top: -30px;
+right: -30px;
+height: 32px;
+width: 32px;
+border-radius: 32px;
+transform: scale(1);
+transform-origin: 50% 50%;
+transition: transform 0.5s ease-out;
+}
+
+.user-small-card.bg1::before {
+    background-color: #6daffe;
+}
+/* .user-small-card.bg1::before {
+    background-color: #d58ebf;
+} */
+/* .user-small-card.bg1::before {
+    background-color: #8d9b6a;
+} */
+/* .user-small-card.bg1::before {
+    background-color: #8a9ea7;
+} */
+
+
+.user-small-card:hover::before {
+transform: scale(47);
+}
+.user-small-card:hover {
+transform: translateY(-5px) scale(1.005) translateZ(0);
+}
+
+/* ********************Responsive Design**************************** */
+
+/******Tablets and ipads*******/
+
+@media screen and (max-width: 1023px) {
+    .user-small-card {
+        flex: 45%;
+    }
+  
+}
+
+/* *************************Cellphones************************** */
+@media screen and (max-width: 768px) {
+    .card-container {
+      flex-direction: column;
+      font-size: 14px;
+    }
+  }
